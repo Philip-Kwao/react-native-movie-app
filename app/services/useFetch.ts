@@ -19,22 +19,22 @@ const useFetch = <T>(fetchFunction:()=>Promise<T>,autoFetch=true)=>{
         finally{
             setLoading(false)
         }
-        // Reset State
-        const reset = ()=>{
-            setData(null)
-            setLoading(false)
-            setError(null)
-        }
-
-        // Call Function at the beginning of the program
-        useEffect(()=>{
-            if(autoFetch){
-                fetchData()
-            }
-        },[])
-
-        return {data, loading, error, refetch:fetchData, reset}
+        
     }
+    // Reset State
+    const reset = ()=>{
+        setData(null)
+        setLoading(false)
+        setError(null)
+    }
+
+    // Call Function at the beginning of the program
+    useEffect(()=>{
+        if(autoFetch){
+            fetchData()
+        }
+    },[])
+    return {data, loading, error, refetch:fetchData, reset}
 
 }
 
