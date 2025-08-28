@@ -21,7 +21,7 @@ const MovieCard = ({id, poster_path, title, vote_average, release_date}:Movie) =
             <Text className='text-white'>{Math.round(vote_average/2)}</Text>
         </View>
         <View className=''>
-            <Text className='text-white font-bold text-sm'>{release_date.split("-")[0]}</Text>
+            <Text className='text-white font-bold text-sm'>{release_date?.split("-")[0]}</Text>
         </View>
         </View>
         </TouchableOpacity>
